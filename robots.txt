@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jeconias-azokpota.vercel.app/sitemap.xml

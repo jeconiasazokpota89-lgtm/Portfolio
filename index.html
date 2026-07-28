@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO ===== -->
+<title>AZOKPOTA Jéconias — Développeur Web | Étudiant en Réseaux & Télécommunications</title>
+<meta name="description" content="Portfolio de AZOKPOTA Mahutondji Jéconias, étudiant en Réseaux & Télécommunications et développeur web. Découvrez mes projets, compétences et expériences.">
+<meta name="keywords" content="Jéconias Azokpota, développeur web Bénin, portfolio, réseaux télécommunications, étudiant informatique, Cotonou, Abomey-Calavi">
+<meta name="author" content="AZOKPOTA Mahutondji Jéconias">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeconias-azokpota.vercel.app/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AZOKPOTA Jéconias — Développeur Web & Étudiant en Réseaux">
+<meta property="og:description" content="Portfolio personnel : projets web, compétences réseaux et développement.">
+<meta property="og:image" content="assets/images/og-cover.jpg">
+<meta property="og:url" content="https://jeconias-azokpota.vercel.app/">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AZOKPOTA Jéconias — Développeur Web">
+<meta name="twitter:description" content="Portfolio personnel : projets web, compétences réseaux et développement.">
+<meta name="twitter:image" content="assets/images/og-cover.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/logo/favicon.png">
+
+<!-- Preconnects -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<!-- AOS (Animate On Scroll) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<!-- Structured data (SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "AZOKPOTA Mahutondji Jéconias",
+  "url": "https://jeconias-azokpota.vercel.app/",
+  "email": "mailto:jeconiasazokpota44@gmail.com",
+  "sameAs": [
+    "https://github.com/jeconiasazokpota89-lgtm",
+    "https://www.linkedin.com/in/j%C3%A9conias-azokpota-54762237a"
+  ],
+  "jobTitle": "Développeur Web / Étudiant en Réseaux & Télécommunications",
+  "address": { "@type": "PostalAddress", "addressLocality": "Abomey-Calavi", "addressCountry": "BJ" }
+}
+</script>
+</head>
+<body>
+
+<!-- ============ SKIP LINK (accessibilité) ============ -->
+<a href="#main" class="skip-link">Aller au contenu principal</a>
+
+<!-- ============ LOADER ============ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-logo">JA</div>
+    <div class="loader-bar"><span></span></div>
+    <p class="loader-text">Chargement du portfolio…</p>
+  </div>
+</div>
+
+<!-- ============ SCROLL PROGRESS BAR ============ -->
+<div id="progress-bar" role="progressbar" aria-label="Progression de lecture" aria-valuemin="0" aria-valuemax="100"></div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ============ ANIMATED BACKGROUND CANVAS ============ -->
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="navbar glass" id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo" aria-label="Retour en haut">
+      <span class="logo-mark">JA</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="#hero" data-fr="Accueil" data-en="Home" class="active">Accueil</a>
+      <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+      <a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a>
+      <a href="#experience" data-fr="Expérience" data-en="Experience">Expérience</a>
+      <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
+      <a href="#certifications" data-fr="Certifications" data-en="Certifications">Certifications</a>
+      <a href="#services" data-fr="Services" data-en="Services">Services</a>
+      <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="langToggle" class="icon-btn" aria-label="Changer de langue / Switch language">
+        <span id="langLabel">FR</span>
+      </button>
+      <button id="themeToggle" class="icon-btn" aria-label="Changer de thème clair/sombre">
+        <i class="fa-solid fa-sun" id="themeIconSun"></i>
+        <i class="fa-solid fa-moon" id="themeIconMoon"></i>
+      </button>
+      <a href="assets/cv/CV_Jeconias_Azokpota.pdf" download class="btn btn-primary btn-small" data-fr="CV" data-en="Resume">
+        <i class="fa-solid fa-download"></i> <span>CV</span>
+      </a>
+      <button id="menuToggle" class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ 1. HERO ============ -->
+  <section id="hero" class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <p class="hero-eyebrow mono" data-fr="👋 Bienvenue sur mon portfolio" data-en="👋 Welcome to my portfolio">👋 Bienvenue sur mon portfolio</p>
+      <h1 class="hero-title">
+        <span data-fr="Bonjour, je suis" data-en="Hi, I'm">Bonjour, je suis</span>
+        <span class="gradient-text">Jéconias</span>
+      </h1>
+      <p class="hero-role">
+        <span id="typed-text"></span><span class="cursor-blink">|</span>
+      </p>
+      <p class="hero-desc" data-fr="Étudiant en Réseaux & Télécommunications, passionné par le développement web et les infrastructures réseau. J'aime construire des choses qui fonctionnent vraiment." data-en="Networking & Telecommunications student, passionate about web development and network infrastructure. I like building things that actually work.">
+        Étudiant en Réseaux & Télécommunications, passionné par le développement web et les infrastructures réseau. J'aime construire des choses qui fonctionnent vraiment.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" data-fr="Voir mes projets" data-en="View my projects">
+          <span>Voir mes projets</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com/jeconiasazokpota89-lgtm" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/j%C3%A9conias-azokpota-54762237a" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:jeconiasazokpota44@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- floating tech icons -->
+    <div class="floating-icons" aria-hidden="true">
+      <i class="fa-brands fa-html5 float-icon fi-1"></i>
+      <i class="fa-brands fa-css3-alt float-icon fi-2"></i>
+      <i class="fa-brands fa-js float-icon fi-3"></i>
+      <i class="fa-brands fa-php float-icon fi-4"></i>
+      <i class="fa-brands fa-linux float-icon fi-5"></i>
+      <i class="fa-solid fa-network-wired float-icon fi-6"></i>
+      <i class="fa-solid fa-database float-icon fi-7"></i>
+      <i class="fa-brands fa-github float-icon fi-8"></i>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Défiler vers le bas">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ============ 2. À PROPOS ============ -->
+  <section id="about" class="section">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">02 · <span data-fr="Qui suis-je" data-en="Who I am">Qui suis-je</span></p>
+      <h2 data-fr="À propos de moi" data-en="About me">À propos de moi</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual" data-aos="fade-right">
+        <div class="about-photo-frame">
+          <div class="about-photo-placeholder">JA</div>
+        </div>
+      </div>
+
+      <div class="about-text" data-aos="fade-left">
+        <p data-fr="Je m'appelle Jéconias Azokpota, étudiant en Réseaux et Télécommunications. Je m'intéresse autant à la construction d'interfaces web soignées qu'à la compréhension profonde des infrastructures réseau qui les font fonctionner." data-en="My name is Jéconias Azokpota, a Networking & Telecommunications student. I'm as interested in building polished web interfaces as I am in deeply understanding the network infrastructure behind them.">
+          Je m'appelle Jéconias Azokpota, étudiant en Réseaux et Télécommunications. Je m'intéresse autant à la construction d'interfaces web soignées qu'à la compréhension profonde des infrastructures réseau qui les font fonctionner.
+        </p>
+        <p data-fr="J'ai développé plusieurs projets web durant mes stages académiques et en équipe, allant d'une plateforme de motivation quotidienne à un site événementiel pour la promotion des femmes en sciences." data-en="I've built several web projects during my academic internships and team collaborations, ranging from a daily motivation platform to an event site promoting women in science.">
+          J'ai développé plusieurs projets web durant mes stages académiques et en équipe, allant d'une plateforme de motivation quotidienne à un site événementiel pour la promotion des femmes en sciences.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number" data-count="3">0</span>+
+            <p data-fr="Projets réalisés" data-en="Projects built">Projets réalisés</p>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="5">0</span>+
+            <p data-fr="Langages / outils" data-en="Languages / tools">Langages / outils</p>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="2">0</span>
+            <p data-fr="Stages académiques" data-en="Academic internships">Stages académiques</p>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="100" id="githubReposStat">0</span>
+            <p data-fr="Dépôts GitHub" data-en="GitHub repos">Dépôts GitHub</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. COMPÉTENCES ============ -->
+  <section id="skills" class="section section-alt">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">03 · <span data-fr="Ma boîte à outils" data-en="My toolbox">Ma boîte à outils</span></p>
+      <h2 data-fr="Compétences" data-en="Skills">Compétences</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card glass" data-aos="fade-up" data-aos-delay="0">
+        <i class="fa-solid fa-code skill-icon"></i>
+        <h3 data-fr="Langages de programmation" data-en="Programming languages">Langages de programmation</h3>
+        <div class="skill-bars">
+          <div class="skill-bar"><span class="skill-label">JavaScript</span><div class="bar"><i style="--val:80%"></i></div></div>
+          <div class="skill-bar"><span class="skill-label">PHP</span><div class="bar"><i style="--val:70%"></i></div></div>
+          <div class="skill-bar"><span class="skill-label">Java</span><div class="bar"><i style="--val:65%"></i></div></div>
+          <div class="skill-bar"><span class="skill-label">HTML5 / CSS3</span><div class="bar"><i style="--val:85%"></i></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card glass" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-database skill-icon"></i>
+        <h3 data-fr="Bases de données" data-en="Databases">Bases de données</h3>
+        <div class="skill-bars">
+          <div class="skill-bar"><span class="skill-label">SQL</span><div class="bar"><i style="--val:70%"></i></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card glass" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-desktop skill-icon"></i>
+        <h3 data-fr="Systèmes" data-en="Systems">Systèmes</h3>
+        <div class="skill-bars">
+          <div class="skill-bar"><span class="skill-label">Windows</span><div class="bar"><i style="--val:85%"></i></div></div>
+          <div class="skill-bar"><span class="skill-label">Linux (Ubuntu & Kali)</span><div class="bar"><i style="--val:65%"></i></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card glass" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa-solid fa-network-wired skill-icon"></i>
+        <h3 data-fr="Réseaux" data-en="Networking">Réseaux</h3>
+        <div class="skill-bars">
+          <div class="skill-bar"><span class="skill-label" data-fr="Initiation aux réseaux" data-en="Networking fundamentals">Initiation aux réseaux</span><div class="bar"><i style="--val:50%"></i></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card glass" data-aos="fade-up" data-aos-delay="400">
+        <i class="fa-solid fa-file-lines skill-icon"></i>
+        <h3 data-fr="Bureautique" data-en="Office tools">Bureautique</h3>
+        <div class="skill-bars">
+          <div class="skill-bar"><span class="skill-label">Microsoft Office</span><div class="bar"><i style="--val:90%"></i></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card glass" data-aos="fade-up" data-aos-delay="500">
+        <i class="fa-solid fa-language skill-icon"></i>
+        <h3 data-fr="Langues" data-en="Languages">Langues</h3>
+        <div class="skill-bars">
+          <div class="skill-bar"><span class="skill-label" data-fr="Français" data-en="French">Français</span><div class="bar"><i style="--val:100%"></i></div></div>
+          <div class="skill-bar"><span class="skill-label" data-fr="Anglais" data-en="English">Anglais</span><div class="bar"><i style="--val:60%"></i></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. EXPÉRIENCE ============ -->
+  <section id="experience" class="section">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">04 · <span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></p>
+      <h2 data-fr="Expérience" data-en="Experience">Expérience</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass">
+          <span class="timeline-date mono">Janvier 2026</span>
+          <h3 data-fr="Développeur Web — Stage académique" data-en="Web Developer — Academic internship">Développeur Web — Stage académique</h3>
+          <p class="timeline-company">TFG SARL — Godomey-Togoudo</p>
+          <ul>
+            <li data-fr="Assistance technique aux utilisateurs internes" data-en="Technical support for internal users">Assistance technique aux utilisateurs internes</li>
+            <li data-fr="Conception d'une plateforme web dynamique de motivation journalière (projet Wazuh)" data-en="Design of a dynamic daily-motivation web platform (Wazuh project)">Conception d'une plateforme web dynamique de motivation journalière (projet Wazuh)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass">
+          <span class="timeline-date mono" data-fr="Juillet – Août 2025" data-en="July – August 2025">Juillet – Août 2025</span>
+          <h3 data-fr="Développeur Web — Stage académique" data-en="Web Developer — Academic internship">Développeur Web — Stage académique</h3>
+          <p class="timeline-company">TFG SARL — Godomey-Togoudo</p>
+          <ul>
+            <li data-fr="Conception d'une plateforme web pour le menu, les commandes et les réservations d'un restaurant fictif" data-en="Design of a web platform for the menu, orders and reservations of a fictional restaurant">Conception d'une plateforme web pour le menu, les commandes et les réservations d'un restaurant fictif</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot timeline-dot-current"></div>
+        <div class="timeline-content glass">
+          <span class="timeline-date mono" data-fr="Aujourd'hui" data-en="Today">Aujourd'hui</span>
+          <h3 data-fr="Étudiant en Réseaux & Télécommunications" data-en="Networking & Telecommunications student">Étudiant en Réseaux & Télécommunications</h3>
+          <p class="timeline-company" data-fr="Poursuite de mes études, spécialisation réseaux/cybersécurité" data-en="Ongoing studies, networking/cybersecurity specialization">Poursuite de mes études, spécialisation réseaux/cybersécurité</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. PROJETS ============ -->
+  <section id="projects" class="section section-alt">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">05 · <span data-fr="Ce que j'ai construit" data-en="What I've built">Ce que j'ai construit</span></p>
+      <h2 data-fr="Projets" data-en="Projects">Projets</h2>
+      <p class="section-sub" data-fr="Chaque projet est présenté comme un vrai cas d'étude : contexte, problème, solution et résultat." data-en="Each project is presented as a real case study: context, problem, solution and result.">Chaque projet est présenté comme un vrai cas d'étude : contexte, problème, solution et résultat.</p>
+    </div>
+
+    <div class="projects-list">
+
+      <!-- Projet 1 -->
+      <article class="project-card tilt-card glass" data-aos="fade-up">
+        <div class="project-card-visual">
+          <i class="fa-solid fa-face-smile project-icon"></i>
+        </div>
+        <div class="project-card-body">
+          <h3>Wazuh — <span data-fr="Plateforme de Motivation" data-en="Motivation Platform">Plateforme de Motivation</span></h3>
+          <div class="project-case">
+            <div><strong data-fr="Contexte" data-en="Context">Contexte</strong><p data-fr="Réalisé durant mon stage académique chez TFG SARL." data-en="Built during my academic internship at TFG SARL.">Réalisé durant mon stage académique chez TFG SARL.</p></div>
+            <div><strong data-fr="Problème" data-en="Problem">Problème</strong><p data-fr="Besoin d'un outil simple pour stimuler la motivation quotidienne des utilisateurs." data-en="Need for a simple tool to boost users' daily motivation.">Besoin d'un outil simple pour stimuler la motivation quotidienne des utilisateurs.</p></div>
+            <div><strong data-fr="Solution" data-en="Solution">Solution</strong><p data-fr="Plateforme web générant des citations inspirantes selon l'humeur choisie, avec sauvegarde des utilisateurs et historique des citations." data-en="Web platform generating inspiring quotes based on chosen mood, with user save and quote history.">Plateforme web générant des citations inspirantes selon l'humeur choisie, avec sauvegarde des utilisateurs et historique des citations.</p></div>
+            <div><strong data-fr="Résultat" data-en="Result">Résultat</strong><p data-fr="Application déployée et fonctionnelle en ligne." data-en="Deployed and fully functional online.">Application déployée et fonctionnelle en ligne.</p></div>
+          </div>
+          <div class="stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+          <div class="project-links">
+            <a href="https://github.com/jeconiasazokpota89-lgtm/Wazuh_motivational-quote-generator" target="_blank" rel="noopener" class="btn btn-outline btn-small"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://motivation-eta.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-fr="Démo" data-en="Live demo">Démo</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Projet 2 -->
+      <article class="project-card tilt-card glass" data-aos="fade-up">
+        <div class="project-card-visual">
+          <i class="fa-solid fa-flask project-icon"></i>
+        </div>
+        <div class="project-card-body">
+          <h3 data-fr="Nuit de la Femme Scientifique" data-en="Women in Science Night">🌙 Nuit de la Femme Scientifique</h3>
+          <div class="project-case">
+            <div><strong data-fr="Contexte" data-en="Context">Contexte</strong><p data-fr="Site événementiel pour un événement académique de promotion des sciences." data-en="Event website for an academic science-promotion event.">Site événementiel pour un événement académique de promotion des sciences.</p></div>
+            <div><strong data-fr="Problème" data-en="Problem">Problème</strong><p data-fr="Manque de visibilité en ligne pour l'événement et sa mission." data-en="Lack of online visibility for the event and its mission.">Manque de visibilité en ligne pour l'événement et sa mission.</p></div>
+            <div><strong data-fr="Solution" data-en="Solution">Solution</strong><p data-fr="Site vitrine présentant l'événement et encourageant les jeunes filles à s'orienter vers les sciences." data-en="Showcase site presenting the event and encouraging young women toward science fields.">Site vitrine présentant l'événement et encourageant les jeunes filles à s'orienter vers les sciences.</p></div>
+            <div><strong data-fr="Résultat" data-en="Result">Résultat</strong><p data-fr="Site déployé et accessible en ligne." data-en="Deployed and accessible online.">Site déployé et accessible en ligne.</p></div>
+          </div>
+          <div class="stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+          <div class="project-links">
+            <a href="https://github.com/jeconiasazokpota89-lgtm/nuit-femme-scientifique" target="_blank" rel="noopener" class="btn btn-outline btn-small"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://nuit-femme-scientifique.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-fr="Démo" data-en="Live demo">Démo</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Projet 3 -->
+      <article class="project-card tilt-card glass" data-aos="fade-up">
+        <div class="project-card-visual">
+          <i class="fa-solid fa-ring project-icon"></i>
+        </div>
+        <div class="project-card-body">
+          <h3>Ever After Events <span class="badge" data-fr="Concours — Team MSK" data-en="Competition — Team MSK">Concours — Team MSK</span></h3>
+          <div class="project-case">
+            <div><strong data-fr="Contexte" data-en="Context">Contexte</strong><p data-fr="Concours de développement web réalisé en équipe (Team MSK)." data-en="Web development competition built as a team (Team MSK).">Concours de développement web réalisé en équipe (Team MSK).</p></div>
+            <div><strong data-fr="Problème" data-en="Problem">Problème</strong><p data-fr="Une agence fictive de mariages traditionnels, civils et réceptions sans présence web." data-en="A fictional wedding & reception agency with no web presence.">Une agence fictive de mariages traditionnels, civils et réceptions sans présence web.</p></div>
+            <div><strong data-fr="Solution" data-en="Solution">Solution</strong><p data-fr="Site vitrine complet : compte à rebours, simulateur de budget en FCFA, chatbot FAQ et galerie filtrable." data-en="Full showcase site: countdown, FCFA budget simulator, FAQ chatbot and filterable gallery.">Site vitrine complet : compte à rebours, simulateur de budget en FCFA, chatbot FAQ et galerie filtrable.</p></div>
+            <div><strong data-fr="Résultat" data-en="Result">Résultat</strong><p data-fr="Projet déployé et présenté au concours en équipe." data-en="Deployed and presented as a team competition entry.">Projet déployé et présenté au concours en équipe.</p></div>
+          </div>
+          <div class="stack"><span>HTML5</span><span>Tailwind CSS</span><span>JavaScript</span><span>AOS</span></div>
+          <div class="project-links">
+            <a href="https://github.com/jeconiasazokpota89-lgtm/ever-after-eventsbymsk" target="_blank" rel="noopener" class="btn btn-outline btn-small"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://ever-after-events-lac.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-fr="Démo" data-en="Live demo">Démo</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- GitHub live stats -->
+    <div class="github-stats-block" data-aos="fade-up">
+      <h3><i class="fa-brands fa-github"></i> <span data-fr="Statistiques GitHub en direct" data-en="Live GitHub stats">Statistiques GitHub en direct</span></h3>
+      <div class="github-stats-grid" id="githubStats">
+        <div class="gh-stat"><span class="gh-number" id="ghRepos">–</span><p data-fr="Dépôts" data-en="Repos">Dépôts</p></div>
+        <div class="gh-stat"><span class="gh-number" id="ghFollowers">–</span><p data-fr="Abonnés" data-en="Followers">Abonnés</p></div>
+        <div class="gh-stat"><span class="gh-number" id="ghFollowing">–</span><p data-fr="Abonnements" data-en="Following">Abonnements</p></div>
+      </div>
+      <div class="github-repos-grid" id="githubRepos">
+        <!-- injected by github.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. CERTIFICATIONS ============ -->
+  <section id="certifications" class="section">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">06 · <span data-fr="Reconnaissances" data-en="Recognitions">Reconnaissances</span></p>
+      <h2 data-fr="Certifications & Formation" data-en="Certifications & Education">Certifications & Formation</h2>
+      <p class="section-sub" data-fr="Section à compléter au fur et à mesure de mes certifications." data-en="Section to be completed as I earn certifications.">Section à compléter au fur et à mesure de mes certifications.</p>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card glass" data-aos="fade-up">
+        <i class="fa-solid fa-graduation-cap cert-icon"></i>
+        <h3 data-fr="Réseaux & Télécommunications" data-en="Networking & Telecommunications">Réseaux & Télécommunications</h3>
+        <p data-fr="Formation en cours" data-en="Ongoing studies">Formation en cours</p>
+      </div>
+      <div class="cert-card glass placeholder-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <h3 data-fr="[Certification à ajouter]" data-en="[Certification to add]">[Certification à ajouter]</h3>
+        <p data-fr="Emplacement réservé — remplacez par une future certification" data-en="Placeholder — replace with a future certification">Emplacement réservé — remplacez par une future certification</p>
+      </div>
+      <div class="cert-card glass placeholder-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-certificate cert-icon"></i>
+        <h3 data-fr="[Certification à ajouter]" data-en="[Certification to add]">[Certification à ajouter]</h3>
+        <p data-fr="Emplacement réservé — remplacez par une future certification" data-en="Placeholder — replace with a future certification">Emplacement réservé — remplacez par une future certification</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. SERVICES ============ -->
+  <section id="services" class="section section-alt">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">07 · <span data-fr="Ce que je peux faire" data-en="What I can do">Ce que je peux faire</span></p>
+      <h2 data-fr="Services" data-en="Services">Services</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card glass" data-aos="fade-up" data-aos-delay="0">
+        <i class="fa-solid fa-laptop-code service-icon"></i>
+        <h3 data-fr="Développement Web" data-en="Web Development">Développement Web</h3>
+        <p data-fr="Sites vitrines et applications web en HTML, CSS, JavaScript, PHP et Java." data-en="Showcase sites and web apps in HTML, CSS, JavaScript, PHP and Java.">Sites vitrines et applications web en HTML, CSS, JavaScript, PHP et Java.</p>
+      </div>
+      <div class="service-card glass" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-database service-icon"></i>
+        <h3 data-fr="Bases de données" data-en="Databases">Bases de données</h3>
+        <p data-fr="Conception et requêtes SQL pour applications web dynamiques." data-en="SQL design and queries for dynamic web applications.">Conception et requêtes SQL pour applications web dynamiques.</p>
+      </div>
+      <div class="service-card glass" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-network-wired service-icon"></i>
+        <h3 data-fr="Notions Réseaux" data-en="Networking basics">Notions Réseaux</h3>
+        <p data-fr="Bases en infrastructures réseau, en cours d'approfondissement." data-en="Networking infrastructure fundamentals, currently deepening.">Bases en infrastructures réseau, en cours d'approfondissement.</p>
+      </div>
+      <div class="service-card glass" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa-solid fa-headset service-icon"></i>
+        <h3 data-fr="Support Technique" data-en="Technical Support">Support Technique</h3>
+        <p data-fr="Assistance technique aux utilisateurs, environnements Windows & Linux." data-en="Technical support for users, Windows & Linux environments.">Assistance technique aux utilisateurs, environnements Windows & Linux.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. CONTACT ============ -->
+  <section id="contact" class="section section-alt">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">08 · <span data-fr="Discutons" data-en="Let's talk">Discutons</span></p>
+      <h2 data-fr="Contact" data-en="Contact">Contact</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info" data-aos="fade-right">
+        <a class="contact-item glass" href="mailto:jeconiasazokpota44@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+          <div><span>Email</span><p>jeconiasazokpota44@gmail.com</p></div>
+        </a>
+        <a class="contact-item glass" href="tel:+22901485808">
+          <i class="fa-solid fa-phone"></i>
+          <div><span data-fr="Téléphone" data-en="Phone">Téléphone</span><p>+229 01 48 58 08 38</p></div>
+        </a>
+        <div class="contact-item glass">
+          <i class="fa-solid fa-location-dot"></i>
+          <div><span data-fr="Localisation" data-en="Location">Localisation</span><p>Abomey-Calavi, Bénin</p></div>
+        </div>
+        <a class="contact-item glass" href="https://github.com/jeconiasazokpota89-lgtm" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i>
+          <div><span>GitHub</span><p>jeconiasazokpota89-lgtm</p></div>
+        </a>
+        <a class="contact-item glass" href="https://www.linkedin.com/in/j%C3%A9conias-azokpota-54762237a" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin"></i>
+          <div><span>LinkedIn</span><p data-fr="Voir le profil" data-en="View profile">Voir le profil</p></div>
+        </a>
+      </div>
+
+      <form class="contact-form glass" id="contactForm" data-aos="fade-left">
+        <div class="form-row">
+          <label for="fromName" data-fr="Nom" data-en="Name">Nom</label>
+          <input type="text" id="fromName" name="from_name" required>
+        </div>
+        <div class="form-row">
+          <label for="fromEmail" data-fr="Email" data-en="Email">Email</label>
+          <input type="email" id="fromEmail" name="from_email" required>
+        </div>
+        <div class="form-row">
+          <label for="subject" data-fr="Sujet" data-en="Subject">Sujet</label>
+          <input type="text" id="subject" name="subject">
+        </div>
+        <div class="form-row">
+          <label for="message" data-fr="Message" data-en="Message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          <span data-fr="Envoyer le message" data-en="Send message">Envoyer le message</span> <i class="fa-solid fa-paper-plane"></i>
+        </button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 10. FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="logo-mark">JA</div>
+      <p data-fr="Étudiant en Réseaux & Télécommunications, développeur web." data-en="Networking & Telecommunications student, web developer.">Étudiant en Réseaux & Télécommunications, développeur web.</p>
+    </div>
+    <div>
+      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+      <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+      <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
+      <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
+    <div>
+      <h4 data-fr="Réseaux" data-en="Social">Réseaux</h4>
+      <div class="footer-socials">
+        <a href="https://github.com/jeconiasazokpota89-lgtm" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/j%C3%A9conias-azokpota-54762237a" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:jeconiasazokpota44@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Jéconias Azokpota — <span data-fr="Fait avec" data-en="Made with">Fait avec</span> ❤️</p>
+  </div>
+</footer>
+
+<!-- ============ BACK TO TOP ============ -->
+<button id="backToTop" aria-label="Retour en haut de page">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="js/particles.js" defer></script>
+<script src="js/github.js" defer></script>
+<script src="js/script.js" defer></script>
+
+</body>
+</html>

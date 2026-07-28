@@ -1,0 +1,66 @@
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+@keyframes blink{
+  0%, 50%{ opacity:1; }
+  51%, 100%{ opacity:0; }
+}
+
+@keyframes pulseLogo{
+  0%, 100%{ transform:scale(1); opacity:1; }
+  50%{ transform:scale(1.06); opacity:0.85; }
+}
+
+@keyframes loaderSlide{
+  0%{ transform:translateX(-100%); }
+  100%{ transform:translateX(350%); }
+}
+
+@keyframes floatUpDown{
+  0%, 100%{ transform:translateY(0) rotate(0deg); }
+  50%{ transform:translateY(-22px) rotate(8deg); }
+}
+
+@keyframes bounceDown{
+  0%, 100%{ transform:translate(-50%, 0); opacity:0.6; }
+  50%{ transform:translate(-50%, 10px); opacity:1; }
+}
+
+@keyframes morphShape{
+  0%, 100%{ border-radius:30% 70% 65% 35% / 40% 45% 55% 60%; }
+  50%{ border-radius:60% 40% 35% 65% / 55% 60% 40% 45%; }
+}
+
+@keyframes pulseDot{
+  0%, 100%{ box-shadow:0 0 0 0 rgba(79,124,255,0.5); }
+  50%{ box-shadow:0 0 0 8px rgba(79,124,255,0); }
+}
+
+@keyframes fadeInUp{
+  from{ opacity:0; transform:translateY(24px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+
+/* Tilt (3D card) effect helper — actual rotation set inline via JS transform */
+.tilt-card{
+  transform-style:preserve-3d;
+  will-change:transform;
+  transition:transform 0.15s ease-out, box-shadow 0.3s ease;
+}
+.tilt-card:hover{ box-shadow:var(--shadow); }
+
+/* Counter number pop */
+.stat-number.counted{ animation:fadeInUp 0.6s ease both; }
+
+/* Generic reveal fallback (used if AOS unavailable) */
+.reveal{ opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible{ opacity:1; transform:translateY(0); }
+
+/* Nav scrolled state */
+.navbar.scrolled{
+  box-shadow:0 4px 30px -10px rgba(0,0,0,0.4);
+}
