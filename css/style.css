@@ -267,6 +267,11 @@ html[data-theme="light"] #themeIconMoon{ display:block; }
   width:100%; height:100%; border-radius:inherit; background:var(--card);
   display:flex; align-items:center; justify-content:center;
   font-family:var(--font-heading); font-size:4rem; font-weight:700; color:var(--accent-2);
+  overflow:hidden;
+}
+.about-photo-placeholder img{
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  display:block;
 }
 .about-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:36px; }
 .stat{ font-family:var(--font-heading); }

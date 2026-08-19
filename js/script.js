@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- TYPING EFFECT ---------- */
   const typedEl = document.getElementById('typed-text');
-  const rolesFR = ['Développeur Web', 'Étudiant en Réseaux', 'Passionné de Cybersécurité'];
-  const rolesEN = ['Web Developer', 'Networking Student', 'Cybersecurity Enthusiast'];
+  const rolesFR = ['Étudiant en Informatique et télécommunications', 'Développeur web', 'Passionné de Cybersécurité'];
+  const rolesEN = ['IT and Telecommunications student', 'Web developer', 'Cybersecurity enthusiast'];
   let typeIndex = 0, charIndex = 0, deleting = false, typingTimeout;
 
   function typeLoop(){
