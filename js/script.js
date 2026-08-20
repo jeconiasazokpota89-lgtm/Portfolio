@@ -236,10 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const formStatus = document.getElementById('formStatus');
   const submitBtn = document.getElementById('submitBtn');
 
-  // ⚠️ Remplacez ces identifiants par les vôtres depuis votre compte EmailJS (emailjs.com)
-  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
-  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+  const EMAILJS_PUBLIC_KEY = 'vKnHHIjV0BzC0Cudl';
+  const EMAILJS_SERVICE_ID = 'service_42o0nag';
+  const EMAILJS_TEMPLATE_ID = 'template_g9ed9k7';
 
   if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY'){
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
@@ -264,8 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
         formStatus.textContent = currentLang === 'en' ? 'Message sent successfully!' : 'Message envoyé avec succès !';
         form.reset();
       })
-      .catch(() => {
-        formStatus.textContent = currentLang === 'en' ? 'An error occurred. Please try again.' : 'Une erreur est survenue. Réessayez.';
+      .catch((error) => {
+        console.error('EmailJS error:', error);
+        const errorMessage = error && error.text ? ` (${error.text})` : '';
+        formStatus.textContent = currentLang === 'en'
+          ? `An error occurred. Please try again.${errorMessage}`
+          : `Une erreur est survenue. Réessayez.${errorMessage}`;
       })
       .finally(() => { submitBtn.disabled = false; });
   });
