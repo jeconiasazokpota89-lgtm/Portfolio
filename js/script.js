@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- LANGUAGE TOGGLE (FR/EN + persistence) ---------- */
   const langToggle = document.getElementById('langToggle');
   const langLabel = document.getElementById('langLabel');
+  const heroGreeting = document.getElementById('heroGreeting');
   let currentLang = localStorage.getItem('portfolio-lang') || 'fr';
 
   function applyLanguage(lang){
@@ -88,6 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const text = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-fr');
       if (text !== null && text !== '') el.textContent = text;
     });
+    if (heroGreeting){
+      const isEvening = new Date().getHours() >= 12;
+      heroGreeting.textContent = lang === 'en'
+        ? (isEvening ? "Good evening, I'm" : "Good morning, I'm")
+        : (isEvening ? 'Bonsoir, je suis' : 'Bonjour, je suis');
+    }
     document.documentElement.setAttribute('lang', lang);
     langLabel.textContent = lang === 'en' ? 'EN' : 'FR';
     currentLang = lang;
